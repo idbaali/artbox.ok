@@ -1,6 +1,12 @@
 <?php
     require 'header.php';
-    require 'oeuvres.php';
+    require 'bdd.php';
+
+    // Connexion à la base de données
+    $bdd = connexion();
+
+    // Requête pour récupérer toutes les œuvres
+    $oeuvres = $bdd->query('SELECT * FROM oeuvres');
 ?>
 <div id="liste-oeuvres">
     <?php foreach($oeuvres as $oeuvre): ?>
